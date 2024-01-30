@@ -4,9 +4,9 @@
 
 <main >
   <div>
-  <article
+  <article class="project"
   *ngFor="let project of projects"
-  [class.hidden]="categoryFilter && project.category?.id != categoryFilter.id"
+  [class.hidden]="categoryFilter && project.category.id != categoryFilter.id"
 >
  
       
@@ -31,10 +31,10 @@
   </article>
 </div>
   <aside>
-    <div *ngIf="categoryFilter!=undefined">
+    <section *ngIf="categoryFilter!=undefined">
     <h2 >Filter</h2>
     <p>{{categoryFilter.name}} <a href="#" (click)="clearFilters()" ><img src="../assets/images/bin.png"/></a></p>
-  </div>
+  </section>
     <h2>Categories</h2>
     <ul>
       <li *ngFor="let category of categories">
