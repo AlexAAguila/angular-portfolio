@@ -1,10 +1,10 @@
 [
   {
     "id": 1,
-    "title": "React Movie App",
+    "title": "Movie Mania",
     "slug": "portfolio-showcase",
     "excerpt": "Creating a movie using React and the MovieDB API.",
-    "body": "<p>Ea error fugit cumque non exercitationem non. Molestias et deserunt ad suscipit quis. Rerum voluptatem saepe aperiam assumenda.</p></p>Saepe tenetur nihil quia quidem nemo. Sequi similique iure ullam facilis. Molestias occaecati veritatis provident.</p></p>Adipisci expedita distinctio libero ea. Nulla quam minus beatae voluptate laudantium quis eos. Fugit ullam ut perferendis quia dignissimos. Blanditiis iste et voluptas magni. Voluptate eos qui quaerat iure eius est aut.</p></p>Quisquam est voluptatum aut cupiditate molestias. Explicabo consequuntur nostrum et et non neque. Consequatur sed est sed blanditiis voluptatem nihil.</p>",
+    "body": "<p>Our group is using react to create the website for a movie selection page. This page includes: watch later and favorites which will store them in 2 separate lists. There is also a filter for the movies and a search query. All movies data are being taken from the movieDB API</p>",
     "url": null,
     "published_date": null,
     "image": null,
@@ -12,34 +12,22 @@
     "category_id": 3,
     "created_at": "2023-02-23T22:31:23.000000Z",
     "updated_at": "2023-02-23T22:31:23.000000Z",
-    "category": { "id": 3, "slug": "full-stack", "name": "Full Stack" },
+    "category": null,
     "tags": [
       {
         "id": 1,
         "name": "React",
         "slug": "react",
         "pivot": { "projects_id": 1, "tags_id": 1 }
-      },
-      {
-        "id": 2,
-        "name": "PHP",
-        "slug": "php",
-        "pivot": { "projects_id": 1, "tags_id": 2 }
-      },
-      {
-        "id": 3,
-        "name": "Docker",
-        "slug": "docker",
-        "pivot": { "projects_id": 1, "tags_id": 3 }
       }
     ]
   },
   {
     "id": 2,
-    "title": "SSD Yearbook",
-    "slug": "ssd-yearbook",
-    "excerpt": "Nostrum voluptatem est esse culpa amet nemo. Earum ea rerum id repudiandae esse quasi et.",
-    "body": "<p>Velit perspiciatis tenetur aspernatur cum qui facilis. Quos tempora omnis harum corporis. Cumque quisquam ea cumque aut sed eius. Ut mollitia architecto eaque tempora ab sit alias.</p></p>Recusandae id non sunt voluptatem. Aut et ab et nihil. At unde recusandae ea molestias dignissimos quisquam molestias.</p></p>Dolore qui recusandae non. Non omnis vel similique ullam odit maiores. Libero in consequatur quia dolores. Unde aliquam hic mollitia.</p>",
+    "title": "Hangman Game",
+    "slug": "hangman-game",
+    "excerpt": "A puzzle game where you guess the word from an API. Definition of the word is also provided by the API once the round is completed.",
+    "body": "<p>For this Javacript game, I want to create a game that was borth simple and challenging. After speaking to friends and family, they all mentioned they enjoyed playing wordle but they would've like to see the definitions for the word of the day. So after I decided to create hangman with the addition to provide the definition when the round is concluded. I used an API from Datamuse which has both words and definitions. I then filtered out any words that had special characters and spaces.</p>",
     "url": null,
     "published_date": null,
     "image": null,
@@ -47,63 +35,58 @@
     "category_id": 1,
     "created_at": "2023-02-23T22:31:23.000000Z",
     "updated_at": "2023-02-23T22:31:23.000000Z",
-    "category": { "id": 1, "slug": "back-end", "name": "Back End" },
-    "tags": []
-  },
+    "category": { "id": 3, "slug": "full-stack", "name": "Full Stack" },
+    "tags": [
+  
+      {
+        "id": 4,
+        "name": "JavaScript",
+        "slug": "javascript",
+        "pivot": { "projects_id": 2, "tags_id": 4 }
+      },
+      {
+        "id": 5,
+        "name": "HTML",
+        "slug": "html",
+        "pivot": { "projects_id": 2, "tags_id": 5 }
+      },
+      {
+        "id": 6,
+        "name": "CSS",
+        "slug": "css",
+        "pivot": { "projects_id": 2, "tags_id": 6 }
+      }
+    ] 
+   },
   {
     "id": 3,
-    "title": "Movie Mania",
-    "slug": "movie-mania",
-    "excerpt": "Et autem hic voluptatibus qui ipsa est. Consequatur tempore nihil et laboriosam aut impedit.",
-    "body": "<p>Numquam voluptates quod doloremque sed. Odio ea in totam veritatis consequuntur ad cupiditate. Adipisci et qui dolor architecto dicta asperiores a. Consequuntur est impedit explicabo ut iste aperiam error deleniti.</p></p>Consequatur sint quia error exercitationem iusto doloremque non placeat. Ut ea molestiae aut. Ab et dolorum ab sit omnis sit. Consequatur ipsam culpa repellat voluptas.</p></p>Facere rem eum doloribus deleniti repellat. Ut quia amet incidunt. Eos et culpa reiciendis ipsum et molestiae omnis. Cumque reprehenderit delectus eum alias consequatur quibusdam.</p></p>Quod minus aut est quis omnis magnam. Tempora ad ab quia sed est optio distinctio. Ut vel et dolor sint est iure.</p></p>Suscipit dolores omnis quia nihil. Deleniti totam rerum cupiditate. Odio maiores consequatur fuga perspiciatis. Commodi doloremque exercitationem neque eius. Nulla cumque et doloribus ab consectetur voluptatem explicabo.</p>",
+    "title": "News Site Homepage",
+    "slug": "news-site-homepage",
+    "excerpt": "Creating a group portfolio project using React.",
+    "body": "<p>Our group decided to use react to be able to divide up the work more evenly and to also give a better layout for constructing the page. We also uses SASS for designing the page which also made it easier to divide the work.</p>",
     "url": null,
     "published_date": null,
     "image": null,
     "thumb": null,
-    "category_id": null,
+    "category_id": 2,
     "created_at": "2023-02-23T22:31:23.000000Z",
     "updated_at": "2023-02-23T22:31:23.000000Z",
-    "category": null,
-    "tags": []
+    "category": { "id": 2, "slug": "front-end", "name": "Front End" },
+    "tags": [
+      {
+        "id": 1,
+        "name": "React",
+        "slug": "react",
+        "pivot": { "projects_id": 3, "tags_id": 1 }
+      }
+    ]
   },
   {
     "id": 4,
-    "title": "News Site Homepage",
-    "slug": "news-site-homepage",
-    "excerpt": "Placeat doloremque sed doloribus debitis quia omnis quaerat alias. Odio et qui enim eveniet ratione ducimus.",
-    "body": "<p>Ut facere cumque hic corrupti animi. Dolore sequi fugit sed quisquam ratione repellat eaque. Eos autem perspiciatis ipsum voluptas voluptas.</p></p>Cum illum iste quia et minima ipsam non. Quas nobis et laborum nihil animi. Quia corrupti et saepe est consectetur ducimus dolores.</p></p>Voluptas rerum sed voluptates ea aliquid. Laboriosam in quisquam tempore sed saepe totam.</p>",
-    "url": null,
-    "published_date": null,
-    "image": null,
-    "thumb": null,
-    "category_id": 2,
-    "created_at": "2023-02-23T22:31:23.000000Z",
-    "updated_at": "2023-02-23T22:31:23.000000Z",
-    "category": { "id": 2, "slug": "front-end", "name": "Front End" },
-    "tags": []
-  },
-  {
-    "id": 5,
-    "title": "JavaScript Game",
-    "slug": "javascript-game",
-    "excerpt": "Nostrum dolores dignissimos qui omnis rerum blanditiis. Tenetur et aut eum est.",
-    "body": "<p>Sit quae laborum sunt dolorum voluptatem et ipsam. Et ipsum animi exercitationem est omnis.</p></p>Autem autem est non voluptatibus. A neque veniam voluptas quo vitae adipisci odio. Vitae quo ea atque molestiae dolorem in.</p></p>Similique adipisci eum qui voluptate repudiandae tempore corporis. At iste earum totam minima dignissimos odio sed animi. Rerum exercitationem est est expedita quae. Mollitia minima ut necessitatibus est dolores rem. Ducimus sit consequatur eos quia omnis.</p>",
-    "url": null,
-    "published_date": null,
-    "image": null,
-    "thumb": null,
-    "category_id": 2,
-    "created_at": "2023-02-23T22:31:23.000000Z",
-    "updated_at": "2023-02-23T22:31:23.000000Z",
-    "category": { "id": 2, "slug": "front-end", "name": "Front End" },
-    "tags": []
-  },
-  {
-    "id": 6,
-    "title": "iOS App",
-    "slug": "ios-app",
-    "excerpt": "Qui dolores et velit. Quo nostrum laboriosam est in possimus accusantium.",
-    "body": "<p>Ut consequatur modi voluptates officia inventore consequatur. Molestiae possimus voluptate nihil voluptatem et harum sapiente. Aut voluptas possimus aspernatur beatae omnis ad et. Non non ipsum laborum quisquam et.</p></p>Ullam ab velit at non. Deserunt ut ea veritatis sapiente aliquid eos quia et. Commodi dolore esse voluptatem delectus.</p></p>Velit velit numquam cupiditate quis. Quos et veniam nobis omnis.</p>",
+    "title": "Tourism Site",
+    "slug": "tourism-site",
+    "excerpt": "Group project for our hand in git and collaboration in HTML and CSS.",
+    "body": "<p>Fro this project the group divided the work by managing pages</p>",
     "url": null,
     "published_date": null,
     "image": null,
@@ -111,39 +94,23 @@
     "category_id": null,
     "created_at": "2023-02-23T22:31:23.000000Z",
     "updated_at": "2023-02-23T22:31:23.000000Z",
-    "category": null,
-    "tags": []
-  },
-  {
-    "id": 7,
-    "title": "Android App",
-    "slug": "android-app",
-    "excerpt": "Omnis odio repudiandae cupiditate consequatur facilis et rem. Quas dolor ab quo aperiam.",
-    "body": "<p>Est et quia ipsam odio voluptatem fuga ducimus. Non illo vitae sed commodi ut. Tempora commodi tenetur velit incidunt ullam.</p></p>Id cum saepe asperiores voluptas quidem quos. Ipsum facilis illum voluptate asperiores.</p></p>Mollitia reprehenderit autem molestias. Sed quia officia velit non sunt. Esse delectus consequatur minus laboriosam laudantium alias. Qui commodi est assumenda accusamus.</p>",
-    "url": null,
-    "published_date": null,
-    "image": null,
-    "thumb": null,
-    "category_id": null,
-    "created_at": "2023-02-23T22:31:23.000000Z",
-    "updated_at": "2023-02-23T22:31:23.000000Z",
-    "category": null,
-    "tags": []
-  },
-  {
-    "id": 8,
-    "title": "Industry Project",
-    "slug": "industry-project",
-    "excerpt": "Iure ratione nemo cumque. Aliquid esse soluta provident consequatur velit ut architecto.",
-    "body": "<p>Deleniti rerum labore sint quibusdam. Expedita ea reiciendis molestiae et amet repellendus autem voluptates. Aut qui voluptas ullam suscipit necessitatibus libero veritatis.</p></p>Pariatur voluptatum quia at quod. Quod quisquam qui commodi. Autem quae sequi minus iste.</p></p>Id atque magnam dolorem minus omnis aut accusantium. Et maxime blanditiis asperiores itaque sit qui culpa est. Consequatur esse excepturi suscipit ea et est corporis. Iure earum dolorum pariatur id.</p></p>Quia dicta quis libero eos odio expedita. In blanditiis doloribus natus ullam expedita est. Sed voluptatibus rerum distinctio voluptate assumenda vel cum.</p></p>Provident ut ipsam minus eos. Quaerat est tempore architecto sint. Vitae deserunt ullam corrupti asperiores sit quia facilis.</p></p>Quia minus ut qui cum odio error dolor quia. Rerum minus molestias voluptatum et eius consequatur. Autem quis et molestiae quidem provident voluptas fuga vel. Voluptatibus quas accusantium doloremque dolores deleniti eum.</p>",
-    "url": null,
-    "published_date": null,
-    "image": null,
-    "thumb": null,
-    "category_id": 3,
-    "created_at": "2023-02-23T22:31:23.000000Z",
-    "updated_at": "2023-02-23T22:31:23.000000Z",
-    "category": { "id": 3, "slug": "full-stack", "name": "Full Stack" },
-    "tags": []
+    "category": { "id": 2, "slug": "front-end", "name": "Front End" },
+    "tags": [
+      {
+      "id": 5,
+      "name": "HTML",
+      "slug": "html",
+      "pivot": { "projects_id": 4, "tags_id": 5 }
+    },
+    {
+      "id": 6,
+      "name": "CSS",
+      "slug": "css",
+      "pivot": { "projects_id": 4, "tags_id": 6 }
+    }]
   }
+ 
 ]
+
+
+

@@ -1,1 +1,8 @@
-[{"id":1,"name":"React","slug":"react"},{"id":2,"name":"Node","slug":"node"},{"id":3,"name":"MVC","slug":"mvc"}]
+[
+  { "id": 1, "name": "React", "slug": "react" },
+  { "id": 2, "name": "Node", "slug": "node" },
+  { "id": 3, "name": "MVC", "slug": "mvc" },
+  { "id": 4, "name": "JavaScript", "slug": "javascript" },
+  { "id": 5, "name": "HTML", "slug": "html" },
+  { "id": 6, "name": "CSS", "slug": "css" }
+]
