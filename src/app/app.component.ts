@@ -46,7 +46,7 @@ export class Project {
   
 })
 export class AppComponent {
-  title = 'portfolio-homepage';
+  title = 'Alex Aguilar Portfolio';
   date = new Date();
   author = "Alex";
   categories = categories;
@@ -68,5 +68,23 @@ export class AppComponent {
     this.categoryFilter = undefined;
     this.tagFilter = undefined;
   }
+
+  // getFilteredProjects() {
+  //   if (!this.categoryFilter && !this.tagFilter) {
+  //     return this.projects;
+  //   }
+  
+  //   return this.projects.filter(project => {
+  //     if (this.categoryFilter && project.category_id !== this.categoryFilter.id) {
+  //       return false;
+  //     }
+  
+  //     if (this.tagFilter && project.tags && !project.tags.some(tag => tag && tag.id === this.tagFilter?.id)) {
+  //       return false;
+  //     }
+  
+  //     return true;
+  //   });
+  // }
 
 }
