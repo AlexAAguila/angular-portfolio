@@ -42,7 +42,7 @@ export class Project {
   standalone: true,
   imports: [CommonModule, RouterOutlet, FormsModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss', './app.header.scss'],
   
 })
 export class AppComponent {
