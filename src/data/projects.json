@@ -26,7 +26,7 @@
     "id": 2,
     "title": "Hangman Game",
     "slug": "hangman-game",
-    "excerpt": "A puzzle game where you guess the word from an API. Definition of the word is also provided by the API once the round is completed.",
+    "excerpt": "Javascript hangman game",
     "body": "For this Javacript game, I want to create a game that was borth simple and challenging. After speaking to friends and family, they all mentioned they enjoyed playing wordle but they would've like to see the definitions for the word of the day. So after I decided to create hangman with the addition to provide the definition when the round is concluded. I used an API from Datamuse which has both words and definitions. I then filtered out any words that had special characters and spaces.",
     "url": null,
     "published_date": null,

@@ -1,5 +1,5 @@
 <header class="header">
-  <h1 *ngIf="title">Welcome to {{ title }}!</h1>
+  <h1 *ngIf="title">{{ title }}</h1>
   <!--Waves Container-->
 <div>
   <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -20,17 +20,43 @@
 
 <main >
   <div>
-  <article class="project"
-  *ngFor="let project of projects"
-  [class.hidden]="categoryFilter && project.category.id != categoryFilter.id"
+    <div class="aside">
+      <section *ngIf="categoryFilter!=undefined" class="aside-inside">
+      <h2 >Filter</h2>
+      <p>{{categoryFilter.name}} <a href="#" (click)="clearFilters()" ><img src="../assets/images/bin.png"/></a></p>
+    </section>
+    <div class="aside-inside-cat">
+      <h2>Categories</h2>
+      <select id="categoryDropdown" (change)="setCategoryFilter($event)">
+        <option value="select">No Filter</option>
+        <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+      </select>
+      
+      
+       
+    </div>
+      <div class="aside-inside-tag">
+      <h2>Tags</h2>
+      <select id="tagDropdown" (change)="setTagFilter($event)">
+        <option value="select">No Filter</option>
+        <option *ngFor="let tag of tags" [value]="tag.id">{{ tag.name }}</option>
+      </select>
+      
+      
+      
+    </div>
+    </div>
+    <article class="project flip"
+    *ngFor="let project of projects; index as i"
+    [class.hidden]="categoryFilter && project.category.id !== categoryFilter.id"
 >
  
-      <div class="flip">
-        <div class="front" [style.background-image]="project.image ? 'url(' + project.image + ')' : 'url(https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)'">
+        <div class="front" (mouseleave)="handleMouseLeave(i)"  [style.background-image]="project.image ? 'url(' + project.image + ')' : 'url(https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)'">
         <h2>{{ project.title }}</h2>
       </div>
-      <div class="back">
+      <div class="back" (mouseleave)="handleMouseLeave(i)"  (click)="toggleExpand(i)" [class.expanded]="isExpanded[i]">
 
+        <h2 *ngIf="project.title && isExpanded[i]">{{ project.title }}</h2>
         <div [innerHTML]="project.excerpt"></div>
         <p *ngIf="project.category">
           Category:
@@ -46,35 +72,15 @@
             </li>
           </ul>
         </div>
-        <p *ngIf="project.body">
+        <p *ngIf="project.body && isExpanded[i]">
           {{ project.body }}</p>
-        <p>Created at: {{ project.created_at | date }}</p>
-        <p>Updated at: {{ project.updated_at | date }}</p>
 
         <!-- <p *ngIf="project.link">
           <a href="{{ project.link }}" target="_blank">Demo</a></p> -->
       </div>
-      </div>
   </article>
 </div>
-  <aside>
-    <section *ngIf="categoryFilter!=undefined">
-    <h2 >Filter</h2>
-    <p>{{categoryFilter.name}} <a href="#" (click)="clearFilters()" ><img src="../assets/images/bin.png"/></a></p>
-  </section>
-    <h2>Categories</h2>
-    <ul>
-      <li *ngFor="let category of categories">
-        <a href="#" (click)="setCategoryFilter(category)">{{ category.name }}</a>
-      </li>
-    </ul>
-    <h2>Tags</h2>
-    <ul>
-      <li *ngFor="let tag of tags">
-        <a href="#" (click)="setTagFilter(tag)">{{ tag.name }}</a>
-      </li>
-    </ul>
-  </aside>
+  
   
   </main>
 <footer>
