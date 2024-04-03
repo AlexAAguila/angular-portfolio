@@ -71,33 +71,13 @@ export class AppComponent {
       this.removeExpanded(index);
     }
   }
-
-  setCategoryFilter(event: any) {
-    const selectedValue = event.target.value;
-    if (selectedValue === 'select') {
-      // Handle the "Select" action, for example, resetting the category filter
-      this.categoryFilter = undefined;
-    } else {
-      // Handle the selected category
-      const selectedIndex = event.target.selectedIndex;
-      this.categoryFilter = this.categories[selectedIndex - 1]; // Adjust the index because of the additional "Select" option
-    }
+  setCategoryFilter(categories: Category) {
+    this.categoryFilter = categories;
   }
-  
-  
-  
 
-  setTagFilter(event: any) {
-    const selectedValue = event.target.value;
-    if (selectedValue === 'select') {
-      // Handle the "Select" action, for example, resetting the tag filter
-      this.tagFilter = undefined;
-    } else {
-      // Find the corresponding tag object based on its id
-      this.tagFilter = this.tags.find(tag => tag.id === parseInt(selectedValue));
-    }
+  setTagFilter(tags: Tag) {
+    this.tagFilter = tags;
   }
-  
   
 
   clearFilters() {

@@ -27,20 +27,17 @@
     </section>
     <div class="aside-inside-cat">
       <h2>Categories</h2>
-      <select id="categoryDropdown" (change)="setCategoryFilter($event)">
-        <option value="select">No Filter</option>
-        <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
-      </select>
-      
-      
-       
-    </div>
-      <div class="aside-inside-tag">
+      <ul>
+        <li *ngFor="let category of categories">
+          <a href="#" (click)="setCategoryFilter(category)">{{ category.name }}</a>
+        </li>
+      </ul>
       <h2>Tags</h2>
-      <select id="tagDropdown" (change)="setTagFilter($event)">
-        <option value="select">No Filter</option>
-        <option *ngFor="let tag of tags" [value]="tag.id">{{ tag.name }}</option>
-      </select>
+      <ul>
+        <li *ngFor="let tag of tags">
+          <a href="#" (click)="setTagFilter(tag)">{{ tag.name }}</a>
+        </li>
+      </ul>
       
       
       
