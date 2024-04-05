@@ -1,11 +1,14 @@
-import { Component, NgModule } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import project from '../data/projects.json';
 import tags from '../data/tags.json';
 import categories from '../data/categories.json';
+// import { randomChar, initCoords, update, draw, animate, startAnimation, hover } from './animation-functions';
 
+
+// Remove local declarations for animation functions
 
 export class Category {
   id!: number;
@@ -37,14 +40,12 @@ export class Project {
   'tags': Tag[] | undefined;
 }
 
-
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, FormsModule],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss', './app.header.scss', './scss/app.effects.scss', './scss/app.aside.scss'],
-  
+  styleUrls: ['./scss/style.scss'],
 })
 export class AppComponent {
   title = 'Alex Aguilar Portfolio';
@@ -57,20 +58,22 @@ export class AppComponent {
   tagFilter: Tag | undefined;
   isExpanded = Array(this.projects.length).fill(false);
 
+  constructor(private renderer: Renderer2) {}
+
   toggleExpand(index: number) {
     this.isExpanded[index] = !this.isExpanded[index];
   }
+
   removeExpanded(index: number) {
     this.isExpanded[index] = false;
   }
 
   handleMouseLeave(index: number) {
-    // Handle mouse leave event on the "back" element
-    if (!this.isExpanded[index]) {
-      // Check if not already expanded (to avoid conflict with click event)
+    if (this.isExpanded[index]) {
       this.removeExpanded(index);
     }
   }
+
   setCategoryFilter(categories: Category) {
     this.categoryFilter = categories;
   }
@@ -78,38 +81,31 @@ export class AppComponent {
   setTagFilter(tags: Tag) {
     this.tagFilter = tags;
   }
-  
 
   clearFilters() {
     this.categoryFilter = undefined;
     this.tagFilter = undefined;
-    
-    // Reset the selected option in the category dropdown
-    const categoryDropdown = document.getElementById('categoryDropdown') as HTMLSelectElement;
-    categoryDropdown.value = 'select';
-    
-    // Reset the selected option in the tag dropdown
-    const tagDropdown = document.getElementById('tagDropdown') as HTMLSelectElement;
-    tagDropdown.value = 'select';
   }
-  
 
-  // getFilteredProjects() {
-  //   if (!this.categoryFilter && !this.tagFilter) {
-  //     return this.projects;
-  //   }
+  // ngOnInit() {
+  //   this.startAnimation();
+  // }
+
+  // startAnimation() {
+  //   const canvas = this.renderer.createElement('canvas');
+  //   canvas.id = 'canvas';
+  //   this.renderer.appendChild(document.body, canvas);
   
-  //   return this.projects.filter(project => {
-  //     if (this.categoryFilter && project.category_id !== this.categoryFilter.id) {
-  //       return false;
-  //     }
+  //   const height = window.innerHeight;
+  //   const width = window.innerWidth;
+  //   canvas.height = height;
+  //   canvas.width = width;
   
-  //     if (this.tagFilter && project.tags && !project.tags.some(tag => tag && tag.id === this.tagFilter?.id)) {
-  //       return false;
-  //     }
+  //   randomChar(); // Using imported function
+  //   initCoords(); // Using imported function
   
-  //     return true;
-  //   });
+  //   animate(); // Using imported function
+  //   startAnimation(); // Using imported function
   // }
 
 }

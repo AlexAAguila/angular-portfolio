@@ -8,10 +8,10 @@
   <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
   </defs>
   <g class="parallax">
-  <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
-  <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-  <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-  <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+  <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(218, 232, 230,0.7" />
+  <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(218, 232, 230,0.5)" />
+  <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(218, 232, 230,0.3)" />
+  <use xlink:href="#gentle-wave" x="48" y="7" fill="#dae8e6" />
   </g>
   </svg>
   </div>
@@ -19,6 +19,16 @@
   </header>
 
 <main >
+  <div class="intro">
+    <h2>About Me</h2>
+    <div class="intro-inside">
+      <p>Hello! I am a Software System Developer in training, currently enrolled in the SSD certificate program at BCIT. My learning journey encompasses HTML/CSS, Javascript, C#, and SQL, and I'm eagerly anticipating diving into Angular, React, Vue, NoSQL, and NodeJS in the near future.
+
+        My professional background includes XR development experience with Virtro technology, where I developed my skills in Git and C#. This experience has equipped me to thrive in the fast-paced environment of SSD. I have a strong passion for continuous learning and skill expansion, and I'm committed to staying on the cutting edge of technology.
+        
+        I'm excited about the opportunities that lie ahead. Please take a moment to view my current projects</p>
+    </div>
+  </div>
   <div>
     <div class="aside">
       <section *ngIf="categoryFilter!=undefined" class="aside-inside">
@@ -32,50 +42,48 @@
           <a href="#" (click)="setCategoryFilter(category)">{{ category.name }}</a>
         </li>
       </ul>
-      <h2>Tags</h2>
+      <!-- <h2>Tags</h2>
       <ul>
         <li *ngFor="let tag of tags">
           <a href="#" (click)="setTagFilter(tag)">{{ tag.name }}</a>
         </li>
-      </ul>
+      </ul> -->
       
       
       
     </div>
     </div>
-    <article class="project flip"
-    *ngFor="let project of projects; index as i"
-    [class.hidden]="categoryFilter && project.category.id !== categoryFilter.id"
->
- 
-        <div class="front" (mouseleave)="handleMouseLeave(i)"  [style.background-image]="project.image ? 'url(' + project.image + ')' : 'url(https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)'">
-        <h2>{{ project.title }}</h2>
-      </div>
-      <div class="back" (mouseleave)="handleMouseLeave(i)"  (click)="toggleExpand(i)" [class.expanded]="isExpanded[i]">
-
-        <h2 *ngIf="project.title && isExpanded[i]">{{ project.title }}</h2>
-        <div [innerHTML]="project.excerpt"></div>
-        <p *ngIf="project.category">
-          Category:
-          <a href="#" (click)="setCategoryFilter(project.category)">
-            {{ project.category.name }}
-          </a>
-        </p>
-        <div class="tags" *ngIf="project.tags && project.tags.length">
-          Tags:
-          <ul>
-            <li *ngFor="let tag of project.tags">
-              <a href="#" (click)="setTagFilter(tag)">{{ tag.name }}</a>
-            </li>
-          </ul>
+    <div class="project-container">
+      <article class="project flip" *ngFor="let project of projects; index as i" [class.hidden]="categoryFilter && project.category.id !== categoryFilter.id">
+        <div class="front" (mouseleave)="handleMouseLeave(i)" [style.background-image]="project.image ? 'url(' + project.image + ')' : 'url(https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)'">
+          <h2>{{ project.title }}</h2>
         </div>
-        <p *ngIf="project.body && isExpanded[i]">
-          {{ project.body }}</p>
-
-        <!-- <p *ngIf="project.link">
-          <a href="{{ project.link }}" target="_blank">Demo</a></p> -->
-      </div>
-  </article>
+        <div class="back" (mouseleave)="handleMouseLeave(i)" (click)="toggleExpand(i)" [class.expanded]="isExpanded[i]">
+          <h2 *ngIf="project.title && isExpanded[i]">{{ project.title }}</h2>
+          <div class="img-container">
+          <img *ngIf="project.image && isExpanded[i]" [src]="project.image" alt="project image" />
+        </div>
+          <div [innerHTML]="project.excerpt"></div>
+          <p *ngIf="project.category">
+            Category:
+            <a href="#" (click)="setCategoryFilter(project.category)">
+              {{ project.category.name }}
+            </a>
+          </p>
+          <div class="tags" *ngIf="project.tags && project.tags.length">
+            Tags:
+            <ul>
+              <li *ngFor="let tag of project.tags">
+                <a href="#" (click)="setTagFilter(tag)">{{ tag.name }}</a>
+              </li>
+            </ul>
+          </div>
+          <p *ngIf="project.body && isExpanded[i]">
+            {{ project.body }}</p>
+        </div>
+      </article>
+    </div>
+    
 </div>
   
   
