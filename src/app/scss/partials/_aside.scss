@@ -1,35 +1,49 @@
-
-  .aside{
-    display: flex;
-    width: 100%;
-      p {
-      margin: 0;
-    }
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-     img {
-        width: 15px;
-        height: auto;
-      }
-    &-inside{
-      display: flex;
-      width: 100%;
-
-      flex-direction: row;
-      &-cat{
-        flex-direction: column;
-        align-content: flex-start;
-        margin: 10px;
-      }
-      &-tag{
-        flex-direction: column;
-        margin: 10px;
-      }
+.aside {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  
+  p {
+    margin: 0;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     
+    li {
+      border: 1px solid #ccc; // Border style
+      padding: 5px 10px; // Padding for spacing inside the button
+      margin: 5px; // Margin for spacing between buttons
+      display: inline-block; // Display buttons horizontally
+      background-color: #f0f0f0;
       
+      &:hover {
+        background-color: #89CFF0; // Background color on hover
+      }
     }
   }
-
+  
+  img {
+    width: 15px;
+    height: auto;
+  }
+  
+  &-inside {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    
+    &-cat {
+      flex-direction: column;
+      align-content: flex-start;
+      margin: 10px;
+    }
+    
+    &-tag {
+      flex-direction: column;
+      margin: 10px;
+    }
+  }
+}

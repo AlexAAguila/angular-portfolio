@@ -61,8 +61,18 @@
         <div class="back" (mouseleave)="handleMouseLeave(i)" (click)="toggleExpand(i)" [class.expanded]="isExpanded[i]">
           <h2 *ngIf="project.title && isExpanded[i]">{{ project.title }}</h2>
           <div class="img-container">
-          <img *ngIf="project.image && isExpanded[i]" [src]="project.image" alt="project image" />
+            <a *ngIf="project.image && isExpanded[i] &&project.url!=null; else noDemo"  [href]="project.url" target="_blank">
+                <img [src]="project.image" alt="project image" />
+                <p *ngIf="project.url!=null">Click to view project</p>           
+            </a>
+            <ng-template #noDemo>
+              <div *ngIf="project.image && isExpanded[i]">
+              <img [src]="project.image" alt="project image" />
+              <p>No live demo available</p>
+              </div>
+            </ng-template>
         </div>
+        
           <div [innerHTML]="project.excerpt"></div>
           <p *ngIf="project.category">
             Category:
