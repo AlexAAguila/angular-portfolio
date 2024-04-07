@@ -13,7 +13,7 @@
 
 
 
-// base
+// // base
 .flip {
     position: relative;
     >.front,
@@ -70,7 +70,7 @@
    
 }
 
-@media screen and (min-width: 768px) {
+// @media screen and (min-width: 768px) {
     // custom
 .flip {
   position: relative;
@@ -123,7 +123,7 @@
   }
 }
 
-}
+// }
 
 
 
