@@ -9,68 +9,106 @@
 * {
   font-weight: normal;
 }
+.mobile {
+  height: 100%;
+  position: relative;
+  >.front,
+  >.back {
+      display: block;
+      transition-timing-function: cubic-bezier(.175, .885, .32, 1.275);
+      transition-duration: .5s;
+      transition-property: transform, opacity;
+  }
 
+  >.back {
+      position: absolute;
+      opacity: 0;
+      top: 0px;
+      left: 0px;
+       width: 90%;
+       height: 220px;
+  }
+  &.expanded-back {
+    display: block;
+    color: white;
+    background-size: cover!important;
+    background-position: center!important;
+    padding: 1em 2em;
+    background: #313131;
+    border-radius: 10px;
+    display: block;
+    position: fixed;
+    width: 100% !important;
+    height: 100% !important;
+    left: 0px;
+    top: 0px;
+    z-index: 100;
 
-
-
-// // base
-.flip {
-    position: relative;
-    >.front,
-    >.back {
-        display: block;
-        transition-timing-function: cubic-bezier(.175, .885, .32, 1.275);
-        transition-duration: .5s;
-        transition-property: transform, opacity;
-    }
-    >.front {
-        transform: rotateY(0deg);
-         height: 200px;
-    }
-    >.back {
-        position: absolute;
-        opacity: 0;
-        top: 0px;
-        left: 0px;
-         width: 90%;
-         height: 220px;
-        transform: rotateY(-180deg);
-    }
-    &:hover {
-        >.front {
-            transform: rotateY(180deg);
-        }
-        >.back {
-            opacity: 1;
-            transform: rotateY(0deg);
-        }
-    }
-    &.flip-vertical {
-        >.back {
-            transform: rotateX(-180deg);
-        }
-        &:not(.expanded):hover{
-          >.front {
-                transform: rotateX(180deg);
-            }
-            >.back {
-                transform: rotateX(0deg);
-            }
-        }
-    }
-
-    .img-container{
-      display: flex;
-      justify-content: center;
-      img{
-        width: 500px;
-        height: 300px;
-      }
-    }
-   
+  
+  }
 }
 
-// @media screen and (min-width: 768px) {
+
+
+
+
+//@media screen and (min-width: 768px) {
+  // base
+.flip {
+  position: relative;
+  >.front,
+  >.back {
+      display: block;
+      transition-timing-function: cubic-bezier(.175, .885, .32, 1.275);
+      transition-duration: .5s;
+      transition-property: transform, opacity;
+  }
+  >.front {
+      transform: rotateY(0deg);
+       height: 200px;
+  }
+  >.back {
+      position: absolute;
+      opacity: 0;
+      top: 0px;
+      left: 0px;
+       width: 90%;
+       height: 220px;
+      transform: rotateY(-180deg);
+  }
+  &:hover {
+      >.front {
+          transform: rotateY(180deg);
+      }
+      >.back {
+          opacity: 1;
+          transform: rotateY(0deg);
+      }
+  }
+  &.flip-vertical {
+      >.back {
+          transform: rotateX(-180deg);
+      }
+      &:not(.expanded):hover{
+        >.front {
+              transform: rotateX(180deg);
+          }
+          >.back {
+              transform: rotateX(0deg);
+          }
+      }
+  }
+
+  .img-container{
+    display: flex;
+    justify-content: center;
+    img{
+      width: 500px;
+      height: 300px;
+    }
+  }
+ 
+}
     // custom
 .flip {
   position: relative;

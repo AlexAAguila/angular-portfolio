@@ -55,10 +55,11 @@
     </div>
     <div class="project-container">
       <article class="project flip" *ngFor="let project of projects; index as i" [class.hidden]="categoryFilter && project.category.id !== categoryFilter.id">
-        <div class="front" (mouseleave)="handleMouseLeave(i)" [style.background-image]="project.image ? 'url(' + project.image + ')' : 'url(https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)'">
+        <div class="front" [style.background-image]="project.image ? 'url(' + project.image + ')' : 'url(https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)'"
+          (click)="toggleExpand(i)">
           <h2>{{ project.title }}</h2>
         </div>
-        <div class="back" (mouseleave)="handleMouseLeave(i)" (click)="toggleExpand(i)" [class.expanded]="isExpanded[i]">
+        <div class="back" (click)="toggleExpand(i)" [class.expanded]="isExpanded[i]">
           <h2 *ngIf="project.title && isExpanded[i]">{{ project.title }}</h2>
           <div class="img-container">
             <a *ngIf="project.image && isExpanded[i] &&project.url!=null; else noDemo"  [href]="project.url" target="_blank">
