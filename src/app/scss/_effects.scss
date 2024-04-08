@@ -8,51 +8,50 @@
 
 * {
   font-weight: normal;
-}
-.mobile {
-  height: 100%;
+}.flip {
   position: relative;
-  >.front,
-  >.back {
-      display: block;
-      transition-timing-function: cubic-bezier(.175, .885, .32, 1.275);
-      transition-duration: .5s;
-      transition-property: transform, opacity;
-  }
+  margin-right: 2px;
+  margin-bottom: 1em;
 
-  >.back {
-      position: absolute;
-      opacity: 0;
-      top: 0px;
-      left: 0px;
-       width: 90%;
-       height: 220px;
-  }
-  &.expanded-back {
+  .front,
+  .back {
     display: block;
     color: white;
-    background-size: cover!important;
-    background-position: center!important;
+    background-size: cover !important;
+    background-position: center !important;
     padding: 1em 2em;
     background: #313131;
     border-radius: 10px;
-    display: block;
-    position: fixed;
-    width: 100% !important;
-    height: 100% !important;
-    left: 0px;
-    top: 0px;
-    z-index: 100;
 
-  
+    p {
+      font-size: 0.9125rem;
+      line-height: 160%;
+      color: #999;
+    }
+
+    transition: all 0.3s ease-in-out; // adjust as needed
   }
+
+  .front {
+    height: 200px;
+
+  }
+
+  .back {
+
+    width: 90%;
+    height: fit-content;
+  }
+
+ 
 }
 
 
 
 
 
-//@media screen and (min-width: 768px) {
+
+@media screen and (min-width: 768px) {
   // base
 .flip {
   position: relative;
@@ -161,7 +160,7 @@
   }
 }
 
-// }
+}
 
 
 

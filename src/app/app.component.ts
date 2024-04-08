@@ -58,6 +58,7 @@ export class AppComponent implements OnInit {
   tagFilter: Tag | undefined;
   isExpanded = Array(this.projects.length).fill(false);
   isMobile: boolean = false; // Track if media query is triggered
+  isFlipped = Array(this.projects.length).fill(false);;
 
 
   constructor(private renderer: Renderer2) {}
@@ -74,9 +75,7 @@ export class AppComponent implements OnInit {
   checkIfMobile() {
     const mediaQuery = window.matchMedia('(max-width: 768px)'); // Adjust the media query as needed
     this.isMobile = mediaQuery.matches;
-    if(!mediaQuery.matches) {
-      this.isExpanded = Array(this.projects.length).fill(false); // Reset expanded state
-    }
+    
   }
   toggleExpand(index: number) {
     if (this.isMobile) {
@@ -92,10 +91,13 @@ export class AppComponent implements OnInit {
     this.isExpanded[index] = false;
   }
 
-  toggleFlip(index: number) {
+  toggleVisible(index: number) {
+    console.log('HERE');
+
     if (this.isMobile) {
+      console.log('HERE');
       // For mobile devices, toggle flip effect on click
-      this.isExpanded[index] = !this.isExpanded[index];
+      this.isFlipped[index] = !this.isFlipped[index];
     }
   }
 

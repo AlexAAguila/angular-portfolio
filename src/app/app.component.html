@@ -55,11 +55,11 @@
     </div>
     <div class="project-container">
       <article class="project flip" *ngFor="let project of projects; index as i" [class.hidden]="categoryFilter && project.category.id !== categoryFilter.id">
-        <div class="front" [style.background-image]="project.image ? 'url(' + project.image + ')' : 'url(https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)'"
-          (click)="toggleExpand(i)">
+        <div class="front" (click)="toggleVisible(i)" *ngIf="!isMobile; else mobile" [style.background-image]="project.image ? 'url(' + project.image + ')' : 'url(https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)'"
+        >
           <h2>{{ project.title }}</h2>
         </div>
-        <div class="back" (click)="toggleExpand(i)" [class.expanded]="isExpanded[i]">
+        <div class="back"*ngIf="!isMobile;" (click)="toggleExpand(i)" [class.expanded]="isExpanded[i]">
           <h2 *ngIf="project.title && isExpanded[i]">{{ project.title }}</h2>
           <div class="img-container">
             <a *ngIf="project.image && isExpanded[i] &&project.url!=null; else noDemo"  [href]="project.url" target="_blank">
@@ -92,6 +92,33 @@
           <p *ngIf="project.body && isExpanded[i]">
             {{ project.body }}</p>
         </div>
+        <ng-template #mobile>
+          <a class="front" [href]="project.url" target="_blank" [style.background-image]="project.image ? 'url(' + project.image + ')' : 'url(https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)'"
+          >
+            <h2>{{ project.title }}</h2>
+          </a>
+       
+          <div class="back" >           
+          
+            <div [innerHTML]="project.excerpt"></div>
+            <p *ngIf="project.category">
+              Category:
+              <a href="#" (click)="setCategoryFilter(project.category)">
+                {{ project.category.name }}
+              </a>
+            </p>
+            <div class="tags" *ngIf="project.tags && project.tags.length">
+              Tags:
+              <ul>
+                <li *ngFor="let tag of project.tags">
+                  <a href="#" (click)="setTagFilter(tag)">{{ tag.name }}</a>
+                </li>
+              </ul>
+            </div>
+            <p *ngIf="project.body">
+              {{ project.body }}</p>
+          </div>
+        </ng-template>
       </article>
     </div>
     
