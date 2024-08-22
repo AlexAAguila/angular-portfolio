@@ -48,7 +48,7 @@ export class Project {
   styleUrls: ['./scss/style.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'Alex Aguilar Portfolio';
+  title = 'Alex Aguilar';
   date = new Date();
   author = "Alex";
   categories = categories;

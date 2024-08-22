@@ -9,6 +9,10 @@
 * {
   font-weight: normal;
 }.flip {
+  a{
+    text-decoration: none;
+    color: #fff;
+  }
   position: relative;
   margin-right: 2px;
   margin-bottom: 1em;
@@ -19,7 +23,7 @@
     color: white;
     background-size: cover !important;
     background-position: center !important;
-    padding: 1em 2em;
+    padding: 1em 1em;
     background: #313131;
     border-radius: 10px;
 

@@ -44,12 +44,21 @@ p{
 
     .tags {
       display: flex;
-      flex-direction: column;
-
+      flex-direction: row; // Change to row layout
+    
       ul {
         list-style: none;
+        display: flex;
+
+        padding: 0;
+        margin: 0;
+    
+        li {
+          margin-right: 10px; // Add margin between tags
+        }
       }
     }
+    
   }
 
   @media screen and (min-width: 768px){

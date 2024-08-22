@@ -30,20 +30,19 @@
     height: auto;
   }
   
-  &-inside {
-    display: flex;
+  .aside-inside {
     width: 100%;
-    flex-direction: row;
-    
+
     &-cat {
-      flex-direction: column;
-      align-content: flex-start;
-      margin: 10px;
+      margin-top: 10px; // Add margin to separate categories from filter
     }
+  }
+    
+
     
     &-tag {
       flex-direction: column;
       margin: 10px;
     }
   }
-}
+
